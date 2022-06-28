@@ -54,6 +54,7 @@ const Botoes = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+
 button{
     width: 155px;
     height: 114px;
@@ -74,6 +75,7 @@ h3{
     color: #FFFFFF;
 
 }
+
 }
 `
 

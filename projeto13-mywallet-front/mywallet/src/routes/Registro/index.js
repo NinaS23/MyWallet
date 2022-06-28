@@ -17,7 +17,9 @@ export default function Registro() {
                 <Link to={"/entrada"}>
                 <button><div>+</div><h3>Nova entrada</h3></button>
                 </Link>
+                <Link to={"/saida"}>
                 <button><div>-</div><h3>Nova saída</h3></button>
+                </Link>
             </Botoes>
         </BodyRegistro>
     )
