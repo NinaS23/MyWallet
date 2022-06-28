@@ -9,7 +9,9 @@ export default function Login() {
                 <Input type="text" placeholder="E-mail"  />
                 <Input type="text" placeholder="Senha"  />
                 </div>
+                <Link to={"/registro"}>
                 <button><Entrar>Entrar</Entrar></button>
+                </Link>
                 <Link to={"/cadastro"}>
                 <h4>Primeira vez? Cadastre-se!</h4>
                 </Link>
