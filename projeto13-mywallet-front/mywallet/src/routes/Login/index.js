@@ -1,4 +1,5 @@
 import { Body , Input , Entrar} from "./style.js";
+import { Link } from "react-router-dom"
 export default function Login() {
     return (
         <>
@@ -9,7 +10,9 @@ export default function Login() {
                 <Input type="text" placeholder="senha"  />
                 </div>
                 <button><Entrar>Entrar</Entrar></button>
+                <Link to={"/cadastro"}>
                 <h4>Primeira vez? Cadastre-se!</h4>
+                </Link>
             </Body>
         </>
 
