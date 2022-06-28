@@ -38,7 +38,7 @@ margin-top: 30%;
          align-items: center;
     }
     h4{
-         margin-top: 15px;
+         margin-top: 25px;
          color: #FFFFFF;
          width: 227px;
          height: 18px;

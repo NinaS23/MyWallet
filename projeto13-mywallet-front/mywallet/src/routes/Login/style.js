@@ -27,7 +27,7 @@ margin-top: 50%;
         margin-top: 10px;
     }
     button{
-         margin-top: 7px;
+         margin-top: 15px;
          background-color: #A328D6;
          border-style: none;
          width: 326px;
@@ -38,7 +38,7 @@ margin-top: 50%;
          align-items: center;
     }
     h4{
-         margin-top: 15px;
+         margin-top: 25px;
          color: #FFFFFF;
          width: 191px;
          height: 18px;

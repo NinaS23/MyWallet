@@ -6,8 +6,8 @@ export default function Login() {
             <Body>
                 <h1>MyWallet</h1>
                 <div>
-                <Input type="text" placeholder="email"  />
-                <Input type="text" placeholder="senha"  />
+                <Input type="text" placeholder="E-mail"  />
+                <Input type="text" placeholder="Senha"  />
                 </div>
                 <button><Entrar>Entrar</Entrar></button>
                 <Link to={"/cadastro"}>
