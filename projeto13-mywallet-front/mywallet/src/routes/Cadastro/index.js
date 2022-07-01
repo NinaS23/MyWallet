@@ -1,7 +1,7 @@
 import { BodyCadastro , Input , Cadastrar} from "./style.js";
 import { Link ,  useNavigate} from "react-router-dom";
 import axios from "axios"
-import { useState , useEffect } from "react";
+import { useState  } from "react";
 export default function Cadastro() {
     const [ userInfo , setUserInfo] = useState({
         nome: "",
@@ -31,9 +31,6 @@ export default function Cadastro() {
         })
 
     }
-
-  
-
   
     return (
         <>
