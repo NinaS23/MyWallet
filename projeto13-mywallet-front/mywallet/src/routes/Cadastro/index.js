@@ -1,5 +1,5 @@
 import { BodyCadastro , Input , Cadastrar} from "./style.js";
-import { Link } from "react-router-dom";
+import { Link ,  useNavigate} from "react-router-dom";
 import axios from "axios"
 import { useState , useEffect } from "react";
 export default function Cadastro() {
@@ -9,6 +9,7 @@ export default function Cadastro() {
         senha: "",
         confirmarSenha: ""
     })
+    const navigate = useNavigate()
 
 
     function EnviarCorpo() {
@@ -22,6 +23,7 @@ export default function Cadastro() {
 
         promise.then((response) => {
             console.log(response.data)
+            navigate("/")
         })
         promise.catch((erro) => {
             console.log(erro)
