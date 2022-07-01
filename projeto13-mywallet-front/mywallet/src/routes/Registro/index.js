@@ -12,7 +12,7 @@ import {
     Data,
     Texto
 } from "./style.js";
-const saida = "../../../public/assets/vector.png"
+
 
 export default function Registro() {
     const [dados, setDados] = useState(true)
@@ -22,7 +22,7 @@ export default function Registro() {
             <BodyRegistro>
                 <TopoRegistro>
                     <h2>olá ,fulano</h2>
-                    <img src={saida} alt="botão de saida" />
+                    <img src="../../../public/assets/Vector.png" alt="botão de saida" />
             </TopoRegistro>
             <Registros>
                 <h2>Não há registros de entrada ou saída</h2>
@@ -43,7 +43,7 @@ if(dados === true){
         <BodyRegistro>
             <TopoRegistro>
                 <h2>olá ,fulano</h2>
-                <img src={saida} alt="botão de saida" />
+                <img src="../../../public/assets/Vector.png" alt="botão de saida" />
             </TopoRegistro>
             <RegistroComDados>
                 <Dados>
