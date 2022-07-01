@@ -1,6 +1,7 @@
 import { BodyCadastro , Input , Cadastrar} from "./style.js";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import axios from "axios"
+import { useState , useEffect } from "react";
 export default function Cadastro() {
     const [ userInfo , setUserInfo] = useState({
         nome: "",
@@ -8,6 +9,29 @@ export default function Cadastro() {
         senha: "",
         confirmarSenha: ""
     })
+
+
+    function EnviarCorpo() {
+        const body = {
+            nome: userInfo.nome,
+            email: userInfo.email,
+            senha: userInfo.senha,
+            senha2: userInfo.confirmarSenha
+        }
+        const promise = axios.post("http://localhost:5009/cadastrar", body);
+
+        promise.then((response) => {
+            console.log(response.data)
+        })
+        promise.catch((erro) => {
+            console.log(erro)
+
+        })
+
+    }
+
+  
+
   
     return (
         <>
@@ -36,7 +60,7 @@ export default function Cadastro() {
                      onChange={e => { setUserInfo({ ...userInfo, confirmarSenha: e.target.value }) }}
                      />
                 </div>
-                <button><Cadastrar>Cadastrar</Cadastrar></button>
+                <button onClick={() => EnviarCorpo()}><Cadastrar>Cadastrar</Cadastrar></button>
                 <Link to={"/"}>
                     <h4>Já tem uma conta? Entre agora!</h4>
                 </Link>
