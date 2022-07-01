@@ -54,10 +54,11 @@ const Botoes = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-
+justify-content: space-evenly;
+margin-top: 3%;
 button{
-    width: 155px;
-    height: 114px;
+    width: 157px;
+    height: 117px;
     margin-top: 2%;
     margin-left: 2%;
     margin-right: 2%;
@@ -79,10 +80,77 @@ h3{
 }
 `
 
+const RegistroComDados = styled.div`
+display: flex;
+flex-direction:column;
+padding-left: 3%;
+width: 326px;
+height: 446px;
+background-color: #FFFFFF;
+margin: 0 auto;
+border-radius: 5px;
+
+
+`
+
+const Saldo = styled.div`
+position: fixed;
+width: 310px;
+height: 30px;
+background-color:   #FFFFFF;
+display: flex;
+margin-top: 97%;
+padding-top: 3%;
+justify-content: space-between;
+
+`
+const Dados = styled.div`
+position: fixed;
+display: flex;
+width: 310px;
+background-color: pink;
+justify-content: center;
+align-items: center;
+margin-top: 5%;
+h2{
+    margin-left: 3%;
+}
+`
+const Valor = styled.h3`
+margin-left: 35%;
+`
+const Data = styled.h2`
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 15px;
+color: #C6C6C6;
+`
+
+const Texto = styled.h1`
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 15px;
+margin-left: 3%;
+color: #000000;
+
+
+`
+
+
 export{
     BodyRegistro,
     TopoRegistro,
     Registros,
     Botoes,
+    RegistroComDados,
+    Saldo,
+    Dados,
+    Valor,
+    Data,
+    Texto
 
 }
