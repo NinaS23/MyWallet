@@ -1,5 +1,5 @@
 import { Body, Input, Entrar } from "./style.js";
-import { Link } from "react-router-dom"
+import { Link , useNavigate } from "react-router-dom"
 import axios  from "axios";
 import { useContext, useState   } from "react";
 import UserContext from "../../providers/UserContext.js";
@@ -9,6 +9,7 @@ export default function Login() {
     const [ senha , setSenha ] = useState("")
     const {token , setToken } = useContext(TokenContext)
     const { nome , setNome } = useContext(UserContext)
+    const navigate = useNavigate()
     function login(){
         const body ={
             email:email,
@@ -18,7 +19,8 @@ export default function Login() {
         promise.then((response) => {
             console.log(response.data)
                setToken(response.data.token)   
-               setNome(response.data.nome)         
+               setNome(response.data.nome)  
+               navigate("/registro")       
         })
         promise.catch((erro) => {
             console.log(erro)
