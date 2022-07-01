@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../../providers/UserContext.js";
 import {
     BodyRegistro,
     TopoRegistro,
@@ -16,12 +17,14 @@ import {
 
 export default function Registro() {
     const [dados, setDados] = useState(true)
+    const { nome } = useContext(UserContext)
+    console.log(nome)
     if (dados === false) {
 
         return (
             <BodyRegistro>
                 <TopoRegistro>
-                    <h2>olá ,fulano</h2>
+                    <h2>olá ,{nome}</h2>
                     <img src="../../../public/assets/Vector.png" alt="botão de saida" />
             </TopoRegistro>
             <Registros>
@@ -42,7 +45,7 @@ if(dados === true){
     return(
         <BodyRegistro>
             <TopoRegistro>
-                <h2>olá ,fulano</h2>
+                <h2>olá ,{nome}</h2>
                 <img src="../../../public/assets/Vector.png" alt="botão de saida" />
             </TopoRegistro>
             <RegistroComDados>
