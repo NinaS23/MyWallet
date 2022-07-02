@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import axios  from "axios";
+import { useEffect } from "react";
 import UserContext from "../../providers/UserContext.js";
 import {
     BodyRegistro,
@@ -13,12 +15,33 @@ import {
     Data,
     Texto
 } from "./style.js";
+import TokenContext from "../../providers/TokenContext.js";
 
 
 export default function Registro() {
     const [dados, setDados] = useState(true)
     const { nome } = useContext(UserContext)
+    const { token } = useContext(TokenContext)
     console.log(nome)
+
+    useEffect(() => {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+    
+        }
+        const URL = "http://localhost:5009/resgistro"
+        const promise = axios.get(URL, config)
+        promise.then((response) => {
+            console.log(response.data)
+          
+        });
+        promise.catch((erro) => {
+            console.log(erro)
+        })
+    }, [])
+
     if (dados === false) {
 
         return (
