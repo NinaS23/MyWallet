@@ -14,7 +14,8 @@ import {
     Dados,
     Data,
     Texto,
-    ValorSaida
+    ValorSaida,
+    SaldoTexto
 } from "./style.js";
 import TokenContext from "../../providers/TokenContext.js";
 
@@ -141,7 +142,7 @@ if(data.length > 0){
                    }
                  
                })} 
-               <Saldo><h1>Saldo</h1><h3>{calc}</h3></Saldo> 
+               <Saldo><h1>Saldo</h1><SaldoTexto cor={calc >= 0 ? "#03AC00" : "#C70000"}>{calc}</SaldoTexto></Saldo> 
             </RegistroComDados>
             <Botoes>
                 <Link to={"/entrada"}>

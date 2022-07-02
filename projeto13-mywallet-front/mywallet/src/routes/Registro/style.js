@@ -105,6 +105,10 @@ padding-top: 3%;
 justify-content: space-around;
 
 `
+const SaldoTexto = styled.h2`
+  color: ${props => props.cor};
+
+`
 const Dados = styled.div`
 display: flex;
 width: 310px;
@@ -159,6 +163,7 @@ export{
     Valor,
     Data,
     Texto,
-    ValorSaida
+    ValorSaida,
+    SaldoTexto
 
 }
