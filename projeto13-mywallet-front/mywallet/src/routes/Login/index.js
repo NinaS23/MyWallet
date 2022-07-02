@@ -15,7 +15,7 @@ export default function Login() {
             email:email,
             senha:senha
         }
-        const promise = axios.post("http://localhost:5009/", body);
+        const promise = axios.post("https://back-end-my-wallet-api.herokuapp.com/", body);
         promise.then((response) => {
             console.log(response.data)
                setToken(response.data.token)   

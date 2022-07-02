@@ -21,7 +21,7 @@ export default function Saida(){
             "valor":valor,
             "desciption": description
         }
-        const promise = axios.post("http://localhost:5009/saida", body , config);
+        const promise = axios.post("https://back-end-my-wallet-api.herokuapp.com/saida", body , config);
         promise.then((response) => {
             console.log(response.data)
             navigate("/registro")

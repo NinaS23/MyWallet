@@ -19,7 +19,7 @@ export default function Cadastro() {
             senha: userInfo.senha,
             senha2: userInfo.confirmarSenha
         }
-        const promise = axios.post("http://localhost:5009/cadastrar", body);
+        const promise = axios.post("https://back-end-my-wallet-api.herokuapp.com/cadastrar", body);
 
         promise.then((response) => {
             console.log(response.data)

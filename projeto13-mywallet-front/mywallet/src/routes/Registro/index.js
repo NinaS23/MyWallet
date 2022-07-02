@@ -42,7 +42,7 @@ export default function Registro() {
             }
     
         }
-        const URL = "http://localhost:5009/resgistro"
+        const URL = "https://back-end-my-wallet-api.herokuapp.com/resgistro"
         const promise = axios.get(URL, config)
         promise.then((response) => {
             console.log(response.data)
