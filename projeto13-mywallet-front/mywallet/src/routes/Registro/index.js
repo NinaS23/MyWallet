@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import axios  from "axios";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import UserContext from "../../providers/UserContext.js";
+import TokenContext from "../../providers/TokenContext.js";
+import login from "../../assets/saida.svg"
 import {
     BodyRegistro,
     TopoRegistro,
@@ -17,13 +20,14 @@ import {
     ValorSaida,
     SaldoTexto
 } from "./style.js";
-import TokenContext from "../../providers/TokenContext.js";
+
 
 
 export default function Registro() {
     const [data , setData ] = useState([])
     const { nome } = useContext(UserContext)
-    const { token } = useContext(TokenContext)
+    const { token , setToken } = useContext(TokenContext)
+    const navigate = useNavigate()
     let entrada = 0
     let saidaDado = 0
     let calc = 0
@@ -91,7 +95,9 @@ export default function Registro() {
             <BodyRegistro>
                 <TopoRegistro>
                     <h2>olá ,{nome}</h2>
-                    <img src="../../../public/assets/Vector.png" alt="botão de saida" />
+                    <img src={login} alt="botão de saida" onClick={() => {
+                     setToken("");
+                     navigate("/");}}/>
             </TopoRegistro>
             <Registros>
                 <h2>Não há registros de entrada ou saída</h2>
@@ -114,7 +120,9 @@ if(data.length > 0){
         <BodyRegistro>
             <TopoRegistro>
                 <h2>olá ,{nome}</h2>
-                <img src="../../../public/assets/Vector.png" alt="botão de saida" />
+                <img src={login} alt="botão de saida" onClick={() => {
+                     setToken("");
+                     navigate("/");}}/>
             </TopoRegistro>
             <RegistroComDados>
                {data.map((e , index)=>{
