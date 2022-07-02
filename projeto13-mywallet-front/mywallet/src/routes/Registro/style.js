@@ -103,9 +103,34 @@ display: flex;
 margin-top: 97%;
 padding-top: 3%;
 justify-content: space-around;
+h1{
+  
+width: 57px;
+height: 20px;
+
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 20px;
+/* identical to box height */
+
+
+color: #000000;
+}
 
 `
 const SaldoTexto = styled.h2`
+width: 62px;
+height: 171px;
+
+
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: right;
   color: ${props => props.cor};
 
 `
