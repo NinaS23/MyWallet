@@ -93,7 +93,7 @@ export default function Registro() {
         return (
             <BodyRegistro>
                 <TopoRegistro>
-                    <h2>olá ,{nome}</h2>
+                    <h2>olá, {nome}</h2>
                     <img src={login} alt="botão de saida" onClick={() => {
                      setToken("");
                      navigate("/");}}/>
@@ -118,7 +118,7 @@ if(data.length > 0){
     return(
         <BodyRegistro>
             <TopoRegistro>
-                <h2>olá ,{nome}</h2>
+                <h2>olá, {nome}</h2>
                 <img src={login} alt="botão de saida" onClick={() => {
                      setToken("");
                      navigate("/");}}/>
