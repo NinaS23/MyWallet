@@ -23,6 +23,9 @@ export default function Registro() {
     const [data , setData ] = useState([])
     const { nome } = useContext(UserContext)
     const { token } = useContext(TokenContext)
+    let entrada = 0
+    let saidaDado = 0
+    let calc = 0
     console.log(nome)
 
     useEffect(() => {
@@ -65,6 +68,21 @@ export default function Registro() {
             </Dados>
         )
     }
+ function verificaSaldo(){
+     console.log("Oi")
+     for(let i =0; i < data.length; i++){
+         if(data[i].type === "entrada"){
+             console.log("sou entrada")
+             entrada += parseInt(data[i].valor)
+         }
+         if(data[i].type === "saida"){
+             console.log("sou saida")
+             saidaDado += parseInt(data[i].valor)
+         }
+     }
+     calc = (entrada - saidaDado)
+     console.log(entrada , saidaDado , calc)
+ }
 
     if (data.length === 0) {
 
@@ -89,6 +107,8 @@ export default function Registro() {
     )
 }
 if(data.length > 0){
+    verificaSaldo()
+   
     return(
         <BodyRegistro>
             <TopoRegistro>
@@ -97,7 +117,9 @@ if(data.length > 0){
             </TopoRegistro>
             <RegistroComDados>
                {data.map((e , index)=>{
+                   
                    if(e.type === "entrada"){
+                  
                     return (
                         <RenderizarDataEntrada 
                         dataInfo={e.data}
@@ -107,6 +129,7 @@ if(data.length > 0){
                         />
                        )
                    }if(e.type === "saida"){
+                   
                        return(
                         <RenderizarDataSaida 
                         dataInfo={e.data}
@@ -115,11 +138,10 @@ if(data.length > 0){
                          
                         />
                        )
-                       
                    }
                  
                })} 
-               <Saldo><h1>Saldo</h1><h3>valor</h3></Saldo> 
+               <Saldo><h1>Saldo</h1><h3>{calc}</h3></Saldo> 
             </RegistroComDados>
             <Botoes>
                 <Link to={"/entrada"}>

@@ -102,7 +102,7 @@ background-color:   #FFFFFF;
 display: flex;
 margin-top: 97%;
 padding-top: 3%;
-justify-content: space-between;
+justify-content: space-around;
 
 `
 const Dados = styled.div`
