@@ -83,12 +83,13 @@ h3{
 const RegistroComDados = styled.div`
 display: flex;
 flex-direction:column;
-padding-left: 3%;
+
 width: 326px;
 height: 446px;
 background-color: #FFFFFF;
 margin: 0 auto;
 border-radius: 5px;
+
 
 
 `
@@ -105,19 +106,20 @@ justify-content: space-between;
 
 `
 const Dados = styled.div`
-position: fixed;
 display: flex;
 width: 310px;
 background-color: #FFFFFF;
-justify-content: center;
+justify-content:space-around;
 align-items: center;
 margin-top: 5%;
-h2{
-    margin-left: 3%;
-}
+
 `
 const Valor = styled.h3`
-margin-left: 35%;
+ color :#03AC00;
+`
+const ValorSaida = styled.h3`
+
+color :#C70000;
 `
 const Data = styled.h2`
 font-family: 'Raleway';
@@ -126,13 +128,18 @@ font-weight: 400;
 font-size: 15px;
 line-height: 15px;
 color: #C6C6C6;
+justify-content: flex-end;
+display: flex;
+align-items: center;
+margin-right: 5%;
+
 `
 
 const Texto = styled.h1`
 font-family: 'Raleway';
 font-style: normal;
 font-weight: 400;
-font-size: 16px;
+font-size: 18px;
 line-height: 15px;
 margin-left: 3%;
 color: #000000;
@@ -151,6 +158,7 @@ export{
     Dados,
     Valor,
     Data,
-    Texto
+    Texto,
+    ValorSaida
 
 }

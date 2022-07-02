@@ -13,13 +13,14 @@ import {
      Valor,
     Dados,
     Data,
-    Texto
+    Texto,
+    ValorSaida
 } from "./style.js";
 import TokenContext from "../../providers/TokenContext.js";
 
 
 export default function Registro() {
-    const [dados, setDados] = useState(true)
+    const [data , setData ] = useState([])
     const { nome } = useContext(UserContext)
     const { token } = useContext(TokenContext)
     console.log(nome)
@@ -35,14 +36,37 @@ export default function Registro() {
         const promise = axios.get(URL, config)
         promise.then((response) => {
             console.log(response.data)
+            setData(response.data)
           
         });
         promise.catch((erro) => {
             console.log(erro)
         })
     }, [])
+    console.log(data)
 
-    if (dados === false) {
+    function RenderizarDataEntrada({dataInfo , legenda , numero , index}) {
+        return (
+            <Dados>
+                <Data>{dataInfo}</Data>
+                <Texto>{legenda}</Texto>
+                <Valor>{numero}</Valor>
+            </Dados>
+        )
+    }
+
+
+    function RenderizarDataSaida({dataInfo , legenda , numero , index}) {
+        return (
+            <Dados>
+                <Data>{dataInfo}</Data>
+                <Texto>{legenda}</Texto>
+                <ValorSaida>{numero}</ValorSaida>
+            </Dados>
+        )
+    }
+
+    if (data.length === 0) {
 
         return (
             <BodyRegistro>
@@ -64,7 +88,7 @@ export default function Registro() {
         </BodyRegistro>
     )
 }
-if(dados === true){
+if(data.length > 0){
     return(
         <BodyRegistro>
             <TopoRegistro>
@@ -72,11 +96,29 @@ if(dados === true){
                 <img src="../../../public/assets/Vector.png" alt="botão de saida" />
             </TopoRegistro>
             <RegistroComDados>
-                <Dados>
-                <Data>01/07</Data>
-                <Texto>comer com mamãe</Texto>
-                <Valor>300</Valor>
-                </Dados>
+               {data.map((e , index)=>{
+                   if(e.type === "entrada"){
+                    return (
+                        <RenderizarDataEntrada 
+                        dataInfo={e.data}
+                         legenda={e.desciption}
+                         numero={e.valor}
+                         
+                        />
+                       )
+                   }if(e.type === "saida"){
+                       return(
+                        <RenderizarDataSaida 
+                        dataInfo={e.data}
+                         legenda={e.desciption}
+                         numero={e.valor}
+                         
+                        />
+                       )
+                       
+                   }
+                 
+               })} 
                <Saldo><h1>Saldo</h1><h3>valor</h3></Saldo> 
             </RegistroComDados>
             <Botoes>
