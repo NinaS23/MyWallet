@@ -108,7 +108,7 @@ const Dados = styled.div`
 position: fixed;
 display: flex;
 width: 310px;
-background-color: pink;
+background-color: #FFFFFF;
 justify-content: center;
 align-items: center;
 margin-top: 5%;
