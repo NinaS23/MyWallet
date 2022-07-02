@@ -53,11 +53,11 @@ export default function Registro() {
             console.log(erro)
         })
     }, [])
-    console.log(data)
+   
 
     function RenderizarDataEntrada({dataInfo , legenda , numero , index}) {
         return (
-            <Dados>
+            <Dados key={index}>
                 <Data>{dataInfo}</Data>
                 <Texto>{legenda}</Texto>
                 <Valor>{numero}</Valor>
@@ -68,7 +68,7 @@ export default function Registro() {
 
     function RenderizarDataSaida({dataInfo , legenda , numero , index}) {
         return (
-            <Dados>
+            <Dados key={index}>
                 <Data>{dataInfo}</Data>
                 <Texto>{legenda}</Texto>
                 <ValorSaida>{numero}</ValorSaida>
@@ -79,16 +79,13 @@ export default function Registro() {
      console.log("Oi")
      for(let i =0; i < data.length; i++){
          if(data[i].type === "entrada"){
-             console.log("sou entrada")
              entrada += parseInt(data[i].valor)
          }
          if(data[i].type === "saida"){
-             console.log("sou saida")
              saidaDado += parseInt(data[i].valor)
          }
      }
      calc = (entrada - saidaDado)
-     console.log(entrada , saidaDado , calc)
  }
 
     if (data.length === 0) {
@@ -136,6 +133,7 @@ if(data.length > 0){
                         dataInfo={e.data}
                          legenda={e.desciption}
                          numero={e.valor}
+                         key={index}
                          
                         />
                        )
@@ -146,13 +144,14 @@ if(data.length > 0){
                         dataInfo={e.data}
                          legenda={e.desciption}
                          numero={e.valor}
+                         key={index}
                          
                         />
                        )
                    }
                  
                })} 
-               <Saldo><h1>Saldo</h1><SaldoTexto cor={calc >= 0 ? "#03AC00" : "#C70000"}>{calc}</SaldoTexto></Saldo> 
+               <Saldo><h1>Saldo</h1><SaldoTexto cor={calc >= 0 ? "#03AC00" : "#C70000"}>{calc.toFixed(2).replace(".",",")}</SaldoTexto></Saldo> 
             </RegistroComDados>
             <Botoes>
                 <Link to={"/entrada"}>
